@@ -9,6 +9,7 @@ const fetchVets = createAsyncThunk('/vets', async () => {
 });
 
 const initialState = {
+  loading: false,
   all: [],
 };
 
@@ -18,7 +19,12 @@ const vetsSlice = createSlice({
   reducers: {
   },
   extraReducers: (builder) => {
+    builder.addCase(fetchVets.pending, (state) => {
+      state.loading = true;
+    });
+
     builder.addCase(fetchVets.fulfilled, (state, action) => {
+      state.loading = false;
       state.all = action.payload;
     });
   },
