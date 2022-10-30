@@ -3,8 +3,7 @@ import logo from '../../assets/logo.svg';
 
 const homeStyle = {
   height: '100%',
-  minHeight: 'calc(100vh - 93px - 81px)',
-  paddingBottom: '97px',
+  minHeight: 'calc(100vh - 190px)',
 };
 
 function Home() {
@@ -17,7 +16,7 @@ function Home() {
       <h2>Why us?</h2>
       <div className="row gap-3 container">
 
-        <div className="col-sm d-flex flex-column align-items-center p-3 border rounded">
+        <div className="col-sm d-flex flex-column align-items-center p-3 border rounded bg-white">
           <h3>Veterinarians</h3>
           <ul className="d-flex flex-column gap-1">
             <li>Graduated and experienced</li>
@@ -30,7 +29,7 @@ function Home() {
           <button type="button" className="btn btn-primary">Check our Vets</button>
         </div>
 
-        <div className="col-sm d-flex flex-column align-items-center p-3 border rounded">
+        <div className="col-sm d-flex flex-column align-items-center p-3 border rounded bg-white">
           <h3>Environment</h3>
           <ul className="d-flex flex-column gap-1">
             <li>All animals are welcome (and we mean all)</li>
@@ -40,7 +39,7 @@ function Home() {
           </ul>
         </div>
 
-        <div className="col-sm d-flex flex-column align-items-center p-3 border rounded">
+        <div className="col-sm d-flex flex-column align-items-center p-3 border rounded bg-white">
           <h3>Animals and owners</h3>
           <ul className="d-flex flex-column gap-1">
             <li>We keep all visits registered in a secure database</li>

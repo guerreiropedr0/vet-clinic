@@ -9,7 +9,7 @@ const fetchVets = createAsyncThunk('/vets', async () => {
 });
 
 const createVet = createAsyncThunk('/vets/', async (vet) => {
-  const resp = await fetch(`${apiUrl}/`, {
+  const resp = await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -52,6 +52,6 @@ const vetsSlice = createSlice({
   },
 });
 
-export { fetchVets };
+export { fetchVets, createVet };
 
 export default vetsSlice.reducer;

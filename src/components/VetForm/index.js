@@ -1,7 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { createVet } from '../../app/vets';
 
 function VetForm() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [graduationDate, setGraduationDate] = useState('');
@@ -11,8 +16,16 @@ function VetForm() {
     callback(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const vet = { name, age, graduation_date: graduationDate };
+
+    dispatch(createVet(vet));
+    navigate('/');
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit} className="container mt-3">
       <div className="mb-3">
         <label htmlFor="full_name" className="form-label">Full Name</label>
         <input

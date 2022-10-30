@@ -22,7 +22,7 @@ function Vet({ props }) {
             <span className="badge bg-secondary">{vet.graduation_date}</span>
           </li>
         </ul>
-        <button type="button" className="btn btn-primary">More information</button>
+        <button type="button" className="btn btn-info text-white">More information</button>
       </div>
     </div>
   );
