@@ -1,9 +1,14 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
 
+const homeStyle = {
+  height: '100%',
+  minHeight: 'calc(100vh - 93px - 81px)',
+};
+
 function Home() {
   return (
-    <main className="container-fluid py-3 d-flex flex-column align-items-center gap-3 bg-light">
+    <main style={homeStyle} className="container-fluid py-3 d-flex flex-column align-items-center gap-3 bg-light">
       <div className="d-flex flex-column align-items-center">
         <h1>Dolittle Centre</h1>
         <img src={logo} alt="Logo" width="128" height="128" />
@@ -14,7 +19,7 @@ function Home() {
         <div className="col d-flex flex-column align-items-center p-3 border rounded">
           <h3>Veterinarians</h3>
           <ul className="d-flex flex-column gap-1">
-            <li>Graduated and are experienced</li>
+            <li>Graduated and experienced</li>
             <li>Passion for the job and the animals</li>
             <li>Every veterinarian is specialized in a species</li>
             <li>Veterinarians are being teached by Doctor Dolittle</li>
