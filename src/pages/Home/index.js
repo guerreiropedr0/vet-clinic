@@ -25,6 +25,8 @@ function Home() {
             <li>Veterinarians are being teached by Doctor Dolittle</li>
             <li>Most vets can talk to animals!</li>
           </ul>
+          <p>Not convinced? See it for yourself.</p>
+          <button type="button" className="btn btn-primary">Check our Vets</button>
         </div>
 
         <div className="col d-flex flex-column align-items-center p-3 border rounded">
@@ -44,6 +46,8 @@ function Home() {
             <li>Owners can bring multiple animals</li>
             <li>Owners can enlist animals in a medical course</li>
           </ul>
+          <p>See the community built in Dolittle Centre.</p>
+          <button type="button" className="btn btn-primary">View community</button>
         </div>
       </div>
     </main>
