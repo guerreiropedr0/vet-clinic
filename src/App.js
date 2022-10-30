@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Vets from './pages/Vets';
 import VetForm from './components/VetForm';
 
-const appStyle = { paddingBottom: '97px' };
+const appStyle = { paddingBottom: '80px' };
 
 function App() {
   return (

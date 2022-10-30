@@ -3,7 +3,7 @@ import logo from '../../assets/logo.svg';
 
 function Footer() {
   return (
-    <div className="fixed-bottom bg-dark text-white p-3 d-flex justify-content-between align-items-end border-top">
+    <div className="fixed-bottom bg-dark text-white p-3 d-flex justify-content-between align-items-end">
       <img src={logo} alt="Logo" width="48" height="48" />
       <p>
         Created by&nbsp;

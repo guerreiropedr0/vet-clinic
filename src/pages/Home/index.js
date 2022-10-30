@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 
 const homeStyle = {
@@ -8,7 +9,7 @@ const homeStyle = {
 
 function Home() {
   return (
-    <main style={homeStyle} className="container-fluid pt-3 d-flex flex-column align-items-center gap-3 bg-light">
+    <main style={homeStyle} className="container-fluid py-3 d-flex flex-column align-items-center gap-3 bg-light">
       <div className="d-flex flex-column align-items-center">
         <h1>Dolittle Centre</h1>
         <img src={logo} alt="Logo" width="128" height="128" />
@@ -26,7 +27,7 @@ function Home() {
             <li>Most vets can talk to animals!</li>
           </ul>
           <p>Not convinced? See it for yourself.</p>
-          <button type="button" className="btn btn-primary">Check our Vets</button>
+          <Link to="/vets" className="btn btn-primary">Check our Vets</Link>
         </div>
 
         <div className="col-sm d-flex flex-column align-items-center p-3 border rounded bg-white">
@@ -47,7 +48,7 @@ function Home() {
             <li>Owners can enlist animals in a medical course</li>
           </ul>
           <p>See the community built in Dolittle Centre.</p>
-          <button type="button" className="btn btn-primary">View community</button>
+          <Link to="/owners" className="btn btn-primary">View community</Link>
         </div>
       </div>
     </main>
