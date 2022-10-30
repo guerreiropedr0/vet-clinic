@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../../assets/cat.svg';
+import logo from '../../assets/logo.svg';
 
 function Home() {
   return (
     <main className="container-fluid py-3 d-flex flex-column align-items-center gap-3 bg-light">
       <div className="d-flex flex-column align-items-center">
-        <h1>Vet Clinic</h1>
+        <h1>Dolittle Centre</h1>
         <img src={logo} alt="Logo" width="128" height="128" />
       </div>
       <h2>Why us?</h2>
