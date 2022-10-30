@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchVet } from '../../app/vets';
 import placeholder from '../../assets/placeholder.webp';
 import ternaryFunc from '../../helper';
@@ -49,10 +49,10 @@ function Vet() {
                     <span className="badge bg-secondary">None</span>,
                   )
                   : null}
-
               </div>
             </li>
           </ul>
+          <Link to={`/vets/${vetId}/visits`} className="btn btn-primary">All Visits</Link>
         </div>
       </div>
     </div>
