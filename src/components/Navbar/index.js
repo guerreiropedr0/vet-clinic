@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/cat.svg';
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-dark navbar-expand-lg bg-dark border-bottom">
       <div className="container-fluid">
         <button type="button" className="btn btn-link navbar-brand d-flex align-items-center gap-2">
           <img src={logo} alt="Logo" width="64" height="64" />
