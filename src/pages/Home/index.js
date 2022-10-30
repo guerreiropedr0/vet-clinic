@@ -4,11 +4,12 @@ import logo from '../../assets/logo.svg';
 const homeStyle = {
   height: '100%',
   minHeight: 'calc(100vh - 93px - 81px)',
+  paddingBottom: '81px',
 };
 
 function Home() {
   return (
-    <main style={homeStyle} className="container-fluid py-3 d-flex flex-column align-items-center gap-3 bg-light">
+    <main style={homeStyle} className="container-fluid pt-3 d-flex flex-column align-items-center gap-3 bg-light">
       <div className="d-flex flex-column align-items-center">
         <h1>Dolittle Centre</h1>
         <img src={logo} alt="Logo" width="128" height="128" />
