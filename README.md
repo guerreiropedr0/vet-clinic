@@ -1,4 +1,4 @@
-# Rock Paper Scissors
+# Vet Clinic
 
 A vet clinic website using Vet Clinic API
 
