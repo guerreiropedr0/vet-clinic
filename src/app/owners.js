@@ -8,6 +8,12 @@ const fetchOwners = createAsyncThunk('/owners', async () => {
   return response.statusText;
 });
 
+const fetchOwner = createAsyncThunk('/owners/:id', async (ownerId) => {
+  const response = await fetch(`${apiUrl}/${ownerId}`);
+  if (response.ok) return response.json();
+  return response.statusText;
+});
+
 const createOwner = createAsyncThunk('/owners/', async (owner) => {
   const resp = await fetch(apiUrl, {
     method: 'POST',
@@ -24,6 +30,7 @@ const createOwner = createAsyncThunk('/owners/', async (owner) => {
 const initialState = {
   loading: false,
   all: [],
+  current: {},
 };
 
 const ownersSlice = createSlice({
@@ -39,6 +46,15 @@ const ownersSlice = createSlice({
     builder.addCase(fetchOwners.fulfilled, (state, action) => {
       state.loading = false;
       state.all = action.payload;
+    });
+
+    builder.addCase(fetchOwner.pending, (state) => {
+      state.loading = true;
+    });
+
+    builder.addCase(fetchOwner.fulfilled, (state, action) => {
+      state.loading = false;
+      state.current = action.payload;
     });
 
     builder.addCase(createOwner.pending, (state) => {
