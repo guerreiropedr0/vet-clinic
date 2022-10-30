@@ -7,6 +7,7 @@ import Vets from './pages/Vets';
 import Vet from './pages/Vet';
 import VetForm from './components/VetForm';
 import Owners from './pages/Owners';
+import OwnerForm from './components/OwnerForm';
 
 const appStyle = { paddingBottom: '80px' };
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/vets/new" element={<VetForm />} />
 
           <Route path="/owners" element={<Owners />} />
+          <Route path="/owners/new" element={<OwnerForm />} />
         </Routes>
       </div>
     </BrowserRouter>

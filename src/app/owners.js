@@ -52,6 +52,6 @@ const ownersSlice = createSlice({
   },
 });
 
-export { fetchOwners };
+export { fetchOwners, createOwner };
 
 export default ownersSlice.reducer;
