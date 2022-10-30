@@ -8,6 +8,12 @@ const fetchVets = createAsyncThunk('/vets', async () => {
   return response.statusText;
 });
 
+const fetchVet = createAsyncThunk('/vets/:id', async (vetId) => {
+  const response = await fetch(`${apiUrl}/${vetId}`);
+  if (response.ok) return response.json();
+  return response.statusText;
+});
+
 const createVet = createAsyncThunk('/vets/', async (vet) => {
   const resp = await fetch(apiUrl, {
     method: 'POST',
@@ -24,6 +30,7 @@ const createVet = createAsyncThunk('/vets/', async (vet) => {
 const initialState = {
   loading: false,
   all: [],
+  current: {},
 };
 
 const vetsSlice = createSlice({
@@ -41,6 +48,15 @@ const vetsSlice = createSlice({
       state.all = action.payload;
     });
 
+    builder.addCase(fetchVet.pending, (state) => {
+      state.loading = true;
+    });
+
+    builder.addCase(fetchVet.fulfilled, (state, action) => {
+      state.loading = false;
+      state.current = action.payload.data.attributes;
+    });
+
     builder.addCase(createVet.pending, (state) => {
       state.loading = true;
     });
@@ -52,6 +68,6 @@ const vetsSlice = createSlice({
   },
 });
 
-export { fetchVets, createVet };
+export { fetchVets, fetchVet, createVet };
 
 export default vetsSlice.reducer;
