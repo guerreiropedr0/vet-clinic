@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import placeholder from '../../assets/placeholder.webp';
 
-function Vet({ props }) {
+function VetCard({ props }) {
   const vet = props;
 
   return (
@@ -22,13 +23,13 @@ function Vet({ props }) {
             <span className="badge bg-secondary">{vet.graduation_date}</span>
           </li>
         </ul>
-        <button type="button" className="btn btn-info text-white">More information</button>
+        <Link to={`/vets/${vet.id}`} className="btn btn-info text-white">More information</Link>
       </div>
     </div>
   );
 }
 
-Vet.propTypes = {
+VetCard.propTypes = {
   props: PropTypes.shape({
     id: PropTypes.number.isRequired,
     age: PropTypes.number.isRequired,
@@ -39,4 +40,4 @@ Vet.propTypes = {
   }).isRequired,
 };
 
-export default Vet;
+export default VetCard;
