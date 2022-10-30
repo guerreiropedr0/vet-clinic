@@ -12,7 +12,7 @@ function Vets() {
   }, [dispatch]);
 
   return (
-    <div className="container-fluid d-flex gap-3 mt-3">
+    <div className="container-fluid d-flex flex-wrap justify-content-center gap-3 mt-3">
       {allVets.map((vet) => <Vet key={vet.id} props={vet} />)}
     </div>
   );
