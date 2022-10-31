@@ -10,12 +10,16 @@ import Owners from './pages/Owners';
 import Owner from './pages/Owner';
 import OwnerForm from './components/OwnerForm';
 
-const appStyle = { paddingBottom: '80px' };
+const appStyle = {
+  height: '100%',
+  minHeight: '100vh',
+  paddingBottom: '80px',
+};
 
 function App() {
   return (
     <BrowserRouter>
-      <div style={appStyle}>
+      <div className="bg-light" style={appStyle}>
         <Navbar />
         <Footer />
         <Routes>

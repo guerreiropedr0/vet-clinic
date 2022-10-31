@@ -13,7 +13,7 @@ function Owners() {
   }, [dispatch]);
 
   return (
-    <div className="container-fluid py-3 bg-light d-flex flex-column gap-3">
+    <div className="container-fluid py-3 d-flex flex-column gap-3">
       <Link className="align-self-end btn btn-primary" to="/owners/new">New Owner</Link>
       <section className=" d-flex flex-wrap justify-content-center gap-5">
         {allOwners.map((owner) => <OwnerCard key={owner.id} props={owner} />)}

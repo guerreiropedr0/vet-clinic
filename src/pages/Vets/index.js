@@ -13,7 +13,7 @@ function Vets() {
   }, [dispatch]);
 
   return (
-    <div className="container-fluid py-3 bg-light d-flex flex-column gap-3">
+    <div className="container-fluid py-3 d-flex flex-column gap-3">
       <Link className="align-self-end btn btn-primary" to="/vets/new">New Vet</Link>
       <section className=" d-flex flex-wrap justify-content-center gap-5">
         {allVets.map((vet) => <VetCard key={vet.id} props={vet} />)}
