@@ -44,7 +44,6 @@ const initialState = {
   loading: false,
   all: [],
   current: {},
-  animal: null,
 };
 
 const ownersSlice = createSlice({
@@ -95,7 +94,11 @@ const ownersSlice = createSlice({
 
     builder.addCase(createOwnerAnimal.fulfilled, (state, action) => {
       state.loading = false;
-      state.animal = action.payload;
+      const newAnimalData = {
+        id: Number(action.payload.data.id),
+        ...action.payload.data.attributes,
+      };
+      state.current.animals = [...state.current.animals, newAnimalData];
     });
   },
 });
