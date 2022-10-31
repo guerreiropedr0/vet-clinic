@@ -54,7 +54,16 @@ const ownersSlice = createSlice({
 
     builder.addCase(fetchOwner.fulfilled, (state, action) => {
       state.loading = false;
-      state.current = action.payload.data.attributes;
+      const ownerData = action.payload.data.attributes;
+      const ownerAnimalsData = action.payload.included;
+
+      state.current = {
+        ...ownerData,
+        animals: ownerAnimalsData.map((animalData) => ({
+          id: Number(animalData.id),
+          ...animalData.attributes,
+        })),
+      };
     });
 
     builder.addCase(createOwner.pending, (state) => {

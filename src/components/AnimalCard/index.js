@@ -32,6 +32,13 @@ function AnimalCard({ props }) {
               {animal.weight_kg}
             </span>
           </li>
+          <li>
+            Species:
+            {' '}
+            <span className="badge bg-secondary">
+              {animal.species.name}
+            </span>
+          </li>
         </ul>
       </div>
     </div>
