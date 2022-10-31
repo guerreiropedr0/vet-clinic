@@ -1,47 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import placeholder from '../../assets/placeholder.webp';
 
-function OwnerCard({ props }) {
-  const owner = props;
+function AnimalCard({ props }) {
+  const animal = props;
 
   return (
     <div className="card" style={{ width: '18rem' }}>
       <img src={placeholder} className="card-img-top" alt="Avatar placeholder" />
       <div className="card-body">
-        <h5 className="card-title">{owner.name}</h5>
+        <h5 className="card-title">{animal.name}</h5>
         <ul>
           <li>
-            Age:
+            Birth Date:
             {' '}
             <span className="badge bg-secondary">
-              {owner.age ? owner.age : 'Not Specified'}
+              {animal.birth_date}
             </span>
           </li>
           <li>
-            Email:
+            Neutered:
             {' '}
             <span className="badge bg-secondary">
-              {owner.email ? owner.email : 'Not Specified'}
+              {animal.neutered ? 'Yes' : 'No'}
+            </span>
+          </li>
+          <li>
+            Weight (kg):
+            {' '}
+            <span className="badge bg-secondary">
+              {animal.weight_kg}
             </span>
           </li>
         </ul>
-        <Link to={`/owners/${owner.id}`} className="btn btn-info text-white">Check Owner&apos;s animals</Link>
       </div>
     </div>
   );
 }
 
-OwnerCard.propTypes = {
+AnimalCard.propTypes = {
   props: PropTypes.shape({
+    birth_date: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    age: PropTypes.number,
     name: PropTypes.string.isRequired,
-    email: PropTypes.string,
+    neutered: PropTypes.bool.isRequired,
+    weight_kg: PropTypes.string.isRequired,
+    owner_id: PropTypes.number,
+    species_id: PropTypes.number,
     created_at: PropTypes.string,
     updated_at: PropTypes.string,
   }).isRequired,
 };
 
-export default OwnerCard;
+export default AnimalCard;

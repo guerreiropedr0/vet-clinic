@@ -54,7 +54,7 @@ const ownersSlice = createSlice({
 
     builder.addCase(fetchOwner.fulfilled, (state, action) => {
       state.loading = false;
-      state.current = action.payload;
+      state.current = action.payload.data.attributes;
     });
 
     builder.addCase(createOwner.pending, (state) => {
@@ -68,6 +68,6 @@ const ownersSlice = createSlice({
   },
 });
 
-export { fetchOwners, createOwner };
+export { fetchOwners, fetchOwner, createOwner };
 
 export default ownersSlice.reducer;
