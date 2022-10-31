@@ -11,9 +11,8 @@ function OwnerForm() {
   const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleChange = (event, callback) => {
-    event.preventDefault();
-    callback(event.target.value);
+  const handleChange = ({ target }, callback) => {
+    callback(target.value);
   };
 
   const handleSubmit = (event) => {

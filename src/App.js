@@ -9,6 +9,7 @@ import VetForm from './components/VetForm';
 import Owners from './pages/Owners';
 import Owner from './pages/Owner';
 import OwnerForm from './components/OwnerForm';
+import OwnerAnimalForm from './components/OwnerAnimalForm';
 
 const appStyle = {
   height: '100%',
@@ -32,6 +33,7 @@ function App() {
           <Route path="/owners" element={<Owners />} />
           <Route path="/owners/:id" element={<Owner />} />
           <Route path="/owners/new" element={<OwnerForm />} />
+          <Route path="/owners/:id/animals/new" element={<OwnerAnimalForm />} />
         </Routes>
       </div>
     </BrowserRouter>

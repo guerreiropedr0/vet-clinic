@@ -11,9 +11,8 @@ function VetForm() {
   const [age, setAge] = useState('');
   const [graduationDate, setGraduationDate] = useState('');
 
-  const handleChange = (event, callback) => {
-    event.preventDefault();
-    callback(event.target.value);
+  const handleChange = ({ target }, callback) => {
+    callback(target.value);
   };
 
   const handleSubmit = (event) => {

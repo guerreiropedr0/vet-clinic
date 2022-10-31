@@ -27,10 +27,24 @@ const createOwner = createAsyncThunk('/owners/', async (owner) => {
   return data;
 });
 
+const createOwnerAnimal = createAsyncThunk('/animals/', async (animal) => {
+  const resp = await fetch(`${apiUrl}/${animal.owner_id}/animals`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(animal),
+  });
+  const data = await resp.json();
+
+  return data;
+});
+
 const initialState = {
   loading: false,
   all: [],
   current: {},
+  animal: null,
 };
 
 const ownersSlice = createSlice({
@@ -74,9 +88,20 @@ const ownersSlice = createSlice({
       state.loading = false;
       state.all = [...state.all, action.payload];
     });
+
+    builder.addCase(createOwnerAnimal.pending, (state) => {
+      state.loading = true;
+    });
+
+    builder.addCase(createOwnerAnimal.fulfilled, (state, action) => {
+      state.loading = false;
+      state.animal = action.payload;
+    });
   },
 });
 
-export { fetchOwners, fetchOwner, createOwner };
+export {
+  fetchOwners, fetchOwner, createOwner, createOwnerAnimal,
+};
 
 export default ownersSlice.reducer;

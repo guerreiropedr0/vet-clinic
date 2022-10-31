@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchOwner } from '../../app/owners';
 import placeholder from '../../assets/placeholder.webp';
 import OwnerAnimals from '../../components/OwnerAnimals';
@@ -16,6 +16,7 @@ function Owner() {
 
   return (
     <div className="container-fluid d-flex py-3 align-items-center">
+      <Link className="align-self-end btn btn-primary" to="animals/new">New Animal</Link>
       <div className="card" style={{ width: '20rem' }}>
         <img src={placeholder} className="card-img-top" alt="Avatar placeholder" />
         <div className="card-body">
