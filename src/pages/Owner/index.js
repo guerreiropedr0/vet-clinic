@@ -15,7 +15,7 @@ function Owner() {
   }, [dispatch, ownerId]);
 
   return (
-    <div className="container-fluid d-flex py-3 align-items-center">
+    <div className="container-fluid py-3 d-flex flex-column gap-3 align-items-center">
       <Link className="align-self-end btn btn-primary" to="animals/new">New Animal</Link>
       <div className="card" style={{ width: '20rem' }}>
         <img src={placeholder} className="card-img-top" alt="Avatar placeholder" />

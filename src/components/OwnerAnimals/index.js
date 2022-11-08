@@ -6,7 +6,7 @@ function OwnerAnimals({ props }) {
   const ownerAnimals = props;
 
   return (
-    <div className="container d-flex flex-wrap gap-3">
+    <div className="container d-flex justify-content-center flex-wrap gap-3">
       {ownerAnimals
         ? ownerAnimals.map((animal) => (
           <AnimalCard key={animal.id} props={animal} />))
